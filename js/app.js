@@ -1,3 +1,5 @@
+console.log('app.js loaded');
+
 const playBtn = document.getElementById('playBtn');
 const audioPlayer = document.getElementById('audioPlayer');
 const statusText = document.getElementById('status');
