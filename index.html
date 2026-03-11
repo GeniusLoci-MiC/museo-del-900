@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Museum Guide Test</title>
+
+  <link rel="canonical" href="https://karaye0000.github.io/museum-guide-test/" />
+  <link rel="manifest" href="/museum-guide-test/manifest.webmanifest" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+
+  <details>
+    <summary>Read more</summary>
+    <div>
+      <p>
+        The Casa Rossa of Anacapri, built by John Clay MacKowen between 1887 and 1896,
+        reflects his passion for Capri, narrated in his book <em>Capri</em> (1884).
+        Adjacent to the Torre Aragonese, it combines diverse architectural elements,
+        Islamic-style battlements, and Pompeian red. More than a residence, it was
+        conceived as a house-museum, housing archaeological finds and a decorated courtyard
+        with a majolica staircase connecting the various levels. Today it hosts an art
+        gallery featuring works acquired by the Municipality of Anacapri.
+      </p>
+
+      <p>
+        The American John Clay MacKowen (1842–1901) was a physician and a Confederate officer.
+        He interrupted his medical studies to take part in the American Civil War, reaching
+        the rank of lieutenant colonel. After the war, he completed his studies and undertook
+        further training in Europe, in Paris, Vienna, and Munich. Having graduated in 1876,
+        he settled in Italy, first in Rome and then in Capri, where he became involved in a
+        relationship with Mariuccia Cimino, by whom he had a daughter, Giulia Evelina.
+      </p>
+    </div>
+  </details>
+
+  <button id="playBtn">Play Audio</button>
+  <p id="status">Status: ready</p>
+
+  <audio id="audioPlayer" preload="auto">
+    <source src="/museum-guide-test/audio/test.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="/museum-guide-test/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/museum-guide-test/sw.js', {
+        scope: '/museum-guide-test/'
+      });
+    }
+  </script>
+</body>
+</html>

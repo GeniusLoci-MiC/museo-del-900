@@ -1,0 +1,10 @@
+{
+  "name": "Museum Guide Test",
+  "short_name": "GuideTest",
+  "description": "Offline museum audio guide test",
+  "scope": "/museum-guide-test/",
+  "start_url": "/museum-guide-test/",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone"
+}
