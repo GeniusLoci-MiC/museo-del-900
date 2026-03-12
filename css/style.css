@@ -1,0 +1,513 @@
+/* ================================================
+   MUSEUM PWA — Casa Rossa / Genius Loci
+   Mobile-first stylesheet
+   ================================================ */
+
+:root {
+  /* Theme color — replace with your Genius Loci HSV */
+  --color-primary: #FFC615;
+  --color-primary-light: #ffd54f;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-bg: #ffffff;
+  --color-section-bg: #ffffff;
+  --color-expand-bg: #f0f0f0;
+  --color-expand-bg-active: #d9d9d9;
+  --color-divider-shadow: rgba(0, 0, 0, 0.1);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+
+  --header-height: 64px;
+  --font-family: 'Kanit', sans-serif;
+}
+
+/* ========== RESET & BASE ========== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: var(--header-height);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ========== HEADER ========== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  height: var(--header-height);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.logo-museum {
+  height: 44px;
+  width: auto;
+}
+
+.logo-genius {
+  height: 40px;
+  width: auto;
+}
+
+.header-logo-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Burger button */
+.burger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+}
+
+.burger-btn span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ========== BURGER MENU ========== */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 320px;
+  background: var(--color-bg);
+  z-index: 300;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 24px 40px;
+}
+
+.burger-menu.active {
+  transform: translateX(0);
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.menu-logo {
+  height: 48px;
+  width: auto;
+}
+
+.menu-close {
+  position: absolute;
+  right: 0;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--color-text);
+  padding: 4px;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-list li {
+  margin-bottom: 4px;
+}
+
+.menu-link {
+  display: block;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-link:active {
+  color: var(--color-primary);
+}
+
+.menu-divider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 12px 0;
+}
+
+/* ========== CACHE BANNER ========== */
+
+.cache-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #fff8e1;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5d4037;
+  transition: all 0.4s ease;
+}
+
+.cache-banner.ready {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.cache-banner.hidden {
+  max-height: 0;
+  padding: 0 16px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.cache-icon {
+  font-size: 8px;
+  animation: pulse 1.5s ease infinite;
+}
+
+.cache-banner.ready .cache-icon {
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ========== SECTIONS ========== */
+
+.main-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 36px 20px;
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--color-bg);
+  box-shadow: 0 2px 4px var(--color-divider-shadow);
+  margin: 0;
+}
+
+/* ========== WELCOME SECTION ========== */
+
+.welcome-section {
+  text-align: center;
+  padding: 48px 20px 40px;
+}
+
+.welcome-title {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.welcome-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+}
+
+.welcome-hint {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--color-text-light);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* ========== ROOM SECTIONS ========== */
+
+.room-title {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.3px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* ========== EXPANDABLE TEXT ========== */
+
+.expandable {
+  margin-bottom: 16px;
+}
+
+.expandable-preview {
+  display: block;
+}
+
+.expandable-full {
+  display: none;
+}
+
+.expandable.open .expandable-preview {
+  display: none;
+}
+
+.expandable.open .expandable-full {
+  display: block;
+}
+
+.expandable-teaser {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.expandable-full p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.expandable-toggle {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-light);
+  padding: 6px 0;
+  background: none;
+  border: none;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.expandable-toggle:active {
+  color: var(--color-text);
+}
+
+/* ========== BUTTONS ========== */
+
+.btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 14px 36px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-audio-support {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: 24px;
+}
+
+.btn-audio-support:active {
+  background: var(--color-primary);
+  color: var(--color-text);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(255, 198, 21, 0.4);
+}
+
+/* ========== AUDIO SECTION ========== */
+
+.audio-section {
+  padding: 40px 20px;
+}
+
+.audio-block {
+  margin-bottom: 28px;
+}
+
+.audio-lang {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.audio-player {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+}
+
+/* Style native audio controls — limited but helpful */
+audio::-webkit-media-controls-panel {
+  background: #f5f5f5;
+}
+
+/* ========== FOOTER ========== */
+
+.footer {
+  padding: 40px 20px 32px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 28px;
+}
+
+.footer-logo {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo .logo-genius {
+  height: 56px;
+}
+
+.footer-partners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ========== BACK TO TOP ========== */
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(158, 158, 158, 0.6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:active {
+  background: rgba(158, 158, 158, 0.85);
+}
+
+/* ========== SCROLLBAR (subtle) ========== */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
