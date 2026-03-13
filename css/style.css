@@ -11,7 +11,7 @@
   --color-bg: #ffffff;
   --color-overlay: rgba(0, 0, 0, 0.5);
 
-  --header-height: 72px;
+  --header-height: 92px;
   --font-family: 'Kanit', sans-serif;
 }
 
@@ -198,7 +198,7 @@ button {
 }
 
 .menu-link:active {
-  color: var(--color-primary);
+  color: #FFC615;
 }
 
 .menu-divider {
@@ -256,13 +256,14 @@ button {
 }
 
 .section {
-  padding: 30px 20px;
+  padding: 60px 20px;
 }
 
 .section-divider {
-  height: 1px;
-  background: var(--color-bg);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+  height: 0;
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
   margin: 0;
 }
 
@@ -270,7 +271,7 @@ button {
 
 .welcome-section {
   text-align: center;
-  padding: 30px 20px;
+  padding: 60px 20px 60px;
 }
 
 .welcome-title {
@@ -334,6 +335,7 @@ button {
   color: var(--color-text);
   line-height: 1.7;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .expandable-full p:last-child {
@@ -365,7 +367,7 @@ button {
   margin: 0 auto;
   padding: 14px 36px;
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   text-align: center;
   border-radius: 12px;
@@ -389,7 +391,7 @@ button {
 /* ========== AUDIO SECTION ========== */
 
 .audio-section {
-  padding: 30px 20px;
+  padding: 60px 20px;
 }
 
 .audio-block {
@@ -415,13 +417,13 @@ audio::-webkit-media-controls-panel {
 /* ========== FOOTER ========== */
 
 .footer {
-  padding: 30px 20px 20px;
+  padding: 60px 20px 20px;
   text-align: center;
 }
 
 .footer-text {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.7;
   color: var(--color-text);
   margin-bottom: 45px;
@@ -434,15 +436,15 @@ audio::-webkit-media-controls-panel {
 }
 
 .footer-logo .logo-genius {
-  height: 28px;
+  height: 34px;
 }
 
 .footer-partners {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 20px;
   margin-bottom: 20px;
 }
 
@@ -450,6 +452,8 @@ audio::-webkit-media-controls-panel {
   height: 26px;
   width: auto;
   object-fit: contain;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 /* ========== BACK TO TOP ========== */
