@@ -1,22 +1,17 @@
 /* ================================================
-   MUSEUM PWA — Casa Rossa / Genius Loci
+   MUSEUM PWA — Museo del Novecento / Genius Loci
    Mobile-first stylesheet
    ================================================ */
 
 :root {
-  /* Theme color — replace with your Genius Loci HSV */
   --color-primary: #FFC615;
   --color-primary-light: #ffd54f;
   --color-text: #333333;
-  --color-text-light: #666666;
+  --color-text-light: #999999;
   --color-bg: #ffffff;
-  --color-section-bg: #ffffff;
-  --color-expand-bg: #f0f0f0;
-  --color-expand-bg-active: #d9d9d9;
-  --color-divider-shadow: rgba(0, 0, 0, 0.1);
   --color-overlay: rgba(0, 0, 0, 0.5);
 
-  --header-height: 64px;
+  --header-height: 72px;
   --font-family: 'Kanit', sans-serif;
 }
 
@@ -72,7 +67,7 @@ button {
   right: 0;
   z-index: 100;
   background: var(--color-bg);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   height: var(--header-height);
 }
 
@@ -81,18 +76,18 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 16px;
-  max-width: 600px;
+  padding: 0 20px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .logo-museum {
-  height: 44px;
+  height: 52px;
   width: auto;
 }
 
 .logo-genius {
-  height: 40px;
+  height: 48px;
   width: auto;
 }
 
@@ -221,7 +216,7 @@ button {
   gap: 8px;
   padding: 10px 16px;
   background: #fff8e1;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: #5d4037;
   transition: all 0.4s ease;
@@ -256,18 +251,18 @@ button {
 /* ========== SECTIONS ========== */
 
 .main-content {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .section {
-  padding: 36px 20px;
+  padding: 30px 20px;
 }
 
 .section-divider {
   height: 1px;
   background: var(--color-bg);
-  box-shadow: 0 2px 4px var(--color-divider-shadow);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
   margin: 0;
 }
 
@@ -275,36 +270,21 @@ button {
 
 .welcome-section {
   text-align: center;
-  padding: 48px 20px 40px;
+  padding: 30px 20px;
 }
 
 .welcome-title {
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  margin-bottom: 8px;
+  margin-bottom: 30px;
   color: var(--color-text);
-}
-
-.welcome-subtitle {
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--color-text-light);
-  margin-bottom: 16px;
-}
-
-.welcome-hint {
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--color-text-light);
-  margin-bottom: 28px;
-  line-height: 1.5;
 }
 
 /* ========== ROOM SECTIONS ========== */
 
 .room-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 500;
   text-align: center;
   margin-bottom: 24px;
@@ -312,7 +292,7 @@ button {
 }
 
 .section-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 500;
   text-align: center;
   margin-bottom: 28px;
@@ -341,25 +321,31 @@ button {
 }
 
 .expandable-teaser {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--color-text);
   line-height: 1.6;
+  text-align: center;
 }
 
 .expandable-full p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--color-text);
   line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.expandable-full p:last-child {
+  margin-bottom: 0;
 }
 
 .expandable-toggle {
   display: block;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  color: var(--color-text-light);
+  color: #b0b0b0;
   padding: 6px 0;
   background: none;
   border: none;
@@ -368,7 +354,7 @@ button {
 }
 
 .expandable-toggle:active {
-  color: var(--color-text);
+  color: var(--color-text-light);
 }
 
 /* ========== BUTTONS ========== */
@@ -379,7 +365,7 @@ button {
   margin: 0 auto;
   padding: 14px 36px;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   text-align: center;
   border-radius: 12px;
@@ -391,7 +377,6 @@ button {
   color: var(--color-text);
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  margin-top: 24px;
 }
 
 .btn-audio-support:active {
@@ -404,7 +389,7 @@ button {
 /* ========== AUDIO SECTION ========== */
 
 .audio-section {
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
 .audio-block {
@@ -423,7 +408,6 @@ button {
   border-radius: 8px;
 }
 
-/* Style native audio controls — limited but helpful */
 audio::-webkit-media-controls-panel {
   background: #f5f5f5;
 }
@@ -431,38 +415,39 @@ audio::-webkit-media-controls-panel {
 /* ========== FOOTER ========== */
 
 .footer {
-  padding: 40px 20px 32px;
+  padding: 30px 20px 20px;
   text-align: center;
 }
 
 .footer-text {
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.7;
   color: var(--color-text);
-  margin-bottom: 28px;
+  margin-bottom: 45px;
 }
 
 .footer-logo {
-  margin-bottom: 28px;
+  margin-bottom: 75px;
   display: flex;
   justify-content: center;
 }
 
 .footer-logo .logo-genius {
-  height: 56px;
+  height: 28px;
 }
 
 .footer-partners {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .partner-logo {
-  height: 32px;
+  height: 26px;
   width: auto;
   object-fit: contain;
 }
