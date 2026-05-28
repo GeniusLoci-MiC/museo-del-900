@@ -387,7 +387,24 @@ button {
   border-color: var(--color-primary);
   box-shadow: 0 2px 12px rgba(255, 198, 21, 0.4);
 }
+.btn-smart-map {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
+}
 
+.btn-smart-map:active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(255, 198, 21, 0.4);
+}
+.btn-audio-support,
+.btn-smart-map {
+  width: 220px;
+}
 /* ========== AUDIO SECTION ========== */
 
 .audio-section {
