@@ -4,7 +4,7 @@
    ================================================ */
 
 const APP_PREFIX = 'museumguide_';
-const VERSION = 'v3';
+const VERSION = 'v4';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 const URLS = [
